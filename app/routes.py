@@ -64,7 +64,6 @@ def reset_password_request():
         user = User.query.filter_by(email=form.email.data).first()
         if user:
             #if they exist, send email and flash Message
-            #TODO: put send email function here
             send_password_reset_email(user)
         flash('Check your email for the instructions to reset your password!')
         return redirect(url_for('login'))
